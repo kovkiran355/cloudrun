@@ -1,7 +1,7 @@
-
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA', '-f', 'amazingapp/blue/Dockerfile', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA', '-f', 'Dockerfile', '.']
+    dir: 'amazingapp/blue'
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/amazingapp:$COMMIT_SHA']
